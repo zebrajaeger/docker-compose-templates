@@ -1,7 +1,15 @@
 services:
   uptime-kuma:
     image: louislam/uptime-kuma:1
+    restart: unless-stopped
     container_name: kuma
+    ports:
+      - 3001:3001
     volumes:
-      - /yourdata/folder:/app/data
-    restart: always
+      - data:/app/data
+
+volumes:
+  data:
+
+networks:
+  kuma:
