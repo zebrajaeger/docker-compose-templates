@@ -1,0 +1,19 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: "${HOST_NAME}"
+    expose:
+      - "80:80"
+    environment:
+      - VIRTUAL_HOST="${HOST_NAME}"
+      - LETSENCRYPT_HOST="${HOST_NAME}"
+      - LETSENCRYPT_EMAIL="${LETSENCRYPT_EMAIL}"
+    volumes:
+      - ${HTTP_ROOT}:/usr/share/nginx/html:ro
+    networks:
+      - reverse-proxy
+    restart: unless-stopped
+
+networks:
+  reverse-proxy:
+    external: true
