@@ -10,6 +10,8 @@ services:
       - ./etc:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./config:/etc/nginx/conf.d:rw
+      - ./log:/var/log/nginx:rw
     networks:
       - proxy
     restart: unless-stopped

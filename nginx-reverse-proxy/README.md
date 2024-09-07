@@ -11,3 +11,5 @@ NginX Reverse Proxy + Letsencrypt
     mkdir certs
     mkdir etc
     mkdir html
+    mkdir config
+    mkdir log
