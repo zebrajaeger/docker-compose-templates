@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx:alpine
     container_name: "${HOST_NAME}"
-    ports:
+    expose:
       - "80:80"
     environment:
       - VIRTUAL_HOST=${HOST_NAME}
