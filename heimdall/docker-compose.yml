@@ -1,6 +1,6 @@
 services:
   heimdall:
-    image: lscr.io/linuxserver/heimdall:latest
+    image: linuxserver/heimdall:arm64v8-2.5.8
     container_name: heimdall
     environment:
       - PUID=1000
