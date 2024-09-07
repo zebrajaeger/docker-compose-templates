@@ -1,5 +1,7 @@
 # Pano Server
 
+mkdir pano
+
 git clone https://github.com/zebrajaeger/pano-server.git .
 
 replace docker-compose.yml
